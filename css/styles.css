@@ -51,18 +51,20 @@ nav p {
 nav ul {
     list-style-type: none;
     margin-top: 30px;
-    padding-left: 20px;
 }
 
 nav ul li {
-    padding-top: 10px;
-    padding-bottom: 10px;
     cursor: pointer;
+    display: flex;
 }
 
 nav ul li a{
     text-decoration: none;
     color: white;
+    flex-grow: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
 }
 
 nav ul li:hover {
