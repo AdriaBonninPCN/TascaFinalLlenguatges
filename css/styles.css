@@ -60,6 +60,11 @@ nav ul li {
     cursor: pointer;
 }
 
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
 nav ul li:hover {
     background-color: rgba(57, 57, 57, 0.314)
 }
