@@ -18,6 +18,16 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    height: 100vh;
+    background-color: #BAE6E6FF;
+}
+
+#toggle {
+    display: none;
+}
+
+.toggle-btn {
+    display: none;
 }
 
 nav {
@@ -30,6 +40,7 @@ nav {
     height: 100vh;
     position: sticky;
     padding: 20px;
+    transition: transform 0.3s ease;
 }
 
 nav p {
@@ -46,6 +57,7 @@ nav ul {
 nav ul li {
     padding-top: 10px;
     padding-bottom: 10px;
+    cursor: pointer;
 }
 
 nav ul li:hover {
@@ -69,4 +81,38 @@ main {
 main h1 {
     margin-top: 30px;
     font-size: 30px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        transform: translateX(-300px);
+        position: fixed;
+    }
+
+    nav p {
+        margin-top: 30px;
+    }
+
+    .toggle-btn {
+        display: block;
+        position: fixed;
+        top: 5px;
+        left: 10px;
+        z-index: 1;
+        background-color: rgb(1, 58, 68);
+        color: white;
+        cursor: pointer;
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+        padding-bottom: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    #toggle:checked~nav {
+        transform: translateX(0);
+    }
 }
