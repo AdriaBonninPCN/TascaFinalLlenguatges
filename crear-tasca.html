@@ -16,15 +16,37 @@
     <nav>
         <p>Menú</p>
         <ul>
-        <li><a href="index.html">Lista de Actividades</a></li>
-        <li><a href="crear-tasca.html">Crear Actividad</a></li>
-        <li><a href="categories.html">Gestor de Categorias</a></li>
+            <li><a href="index.html">Lista de Actividades</a></li>
+            <li><a href="crear-tasca.html">Crear Actividad</a></li>
+            <li><a href="categories.html">Gestor de Categorias</a></li>
         </ul>
         <img src="https://i6.glitter-graphics.org/pub/1713/1713336rtl2sq8q50.gif">
     </nav>
 
+    <div class = "placeholder-div"></div>
+
     <main>
         <h1>Crear Nueva Tarea</h1>
+        <div class = "form-tarea">
+            <label for = "titol">Título:</label>
+            <input type = "text" id = "titol" name = "titol" required>
+            <label for = "descripcio">Descripción:</label>
+            <input type = "text" id = "descripcio" name = "descripcio" required>
+            <label for = "data">Descripción:</label>
+            <input type = "date" id = "data" name = "data" required>
+            <label for = "categoria">Categoria:</label>
+            <select id = "categoria" name = "categoria">
+                <!-- hay q poner las categorias aqui !!! !! !!1!!-->
+                 <option value = "placeholder">Categoria</option>
+            </select>
+            <label for = "prioritat">Prioridad:</label>
+            <select id = "prioritat" name = "prioritat">
+                <option value="baja">Baja</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+            </select>
+            <button>Crear Tarea</button>
+        </div>
     </main>
 </body>
 
