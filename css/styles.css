@@ -96,20 +96,55 @@ main h1 {
     font-size: 30px;
 }
 
-.form-tarea{
+.crear-tarea, .crear-categoria{
     background-color: white;
     width: 90%;
     height: 80%;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    padding: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 10px;
 }
 
-.form-tarea *{
-    margin-top: 5px;
+.crear-elemento{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.crear-elemento *{
+    margin-right: 10px;
+}
+
+.crear-elemento input{
+    height: 30px;
+    flex-grow: 2;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.crear-elemento #color{
+    padding: 0;
+    width: 50px;
+    flex-grow: 0;
+    cursor: pointer;
+}
+
+.boton{
+    background-color: #025A6AFF;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: transparent;
+}
+
+.boton:hover{
+    cursor: pointer;
+    background-color: rgb(3, 103, 121);
 }
 
 @media (max-width: 768px) {
