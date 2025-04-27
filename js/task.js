@@ -1,4 +1,4 @@
-class Task{
+class task{
     constructor(id, titol, descripcio, data, categoria, prioritat, realitzada){
         this.id = id;
         this.titol = titol;
