@@ -149,12 +149,71 @@ main h1 {
     overflow-y: scroll;
 }
 
-.categoria-box .nombre{
-    
-}
-
 .eliminar{
     background-color: #DF319CFF;
+}
+
+/* Aquesta part m'ha ajudat grok a fer-ho (la dels radio buttons)*/
+input[type="radio"].color {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+input[type="radio"].azul {
+    border-color: #3498db;
+    background-color: #3498db;
+}
+
+input[type="radio"].amarillo {
+    border-color: #f1c40f;
+    background-color: #f1c40f;
+}
+
+input[type="radio"].rosa {
+    border-color: #e45c8a;
+    background-color: #e45c8a;
+}
+
+input[type="radio"].rojo {
+    border-color: #e74c3c;
+    background-color: #e74c3c;
+}
+
+input[type="radio"]:checked {
+    background-color: #ffffff;
+}
+
+label, input[type="radio"] {
+    margin-right: 10px;
+}
+
+.colores{
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    height: fit-content;
+}
+
+.azul{
+    background-color: #3498db;
+}
+
+.amarillo{
+    background-color: #f1c40f;
+}
+
+.rosa{
+    background-color: #e45c8a;
+}
+
+.rojo{
+    background-color: #e74c3c;
 }
 
 @media (max-width: 768px) {
