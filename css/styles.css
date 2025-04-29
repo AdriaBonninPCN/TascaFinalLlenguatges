@@ -226,6 +226,34 @@ label, input[type="radio"] {
     background-color: #e74c3c;
 }
 
+.tarea-box{
+    background-color: rgb(191, 159, 209);
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarea-box *{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.tarea-box .titulo{
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+}
+
+.tarea-box .descripcion{
+    background-color: antiquewhite;
+}
+
 @media (max-width: 768px) {
     nav {
         transform: translateX(-300px);
