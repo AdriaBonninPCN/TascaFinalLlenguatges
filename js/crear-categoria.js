@@ -59,15 +59,21 @@ function cargarCategorias() {
     categories.forEach((element, index) => {
         document.getElementById("categoriasCaja").innerHTML +=
             `
-            <div class="categoria-box ${element.color}">
+            <div class="categoria-box" id = "${index}">
             <p class = "nombre">${element.nom}</p>
             <button class = "boton eliminar" onclick="eliminarCategoria(${index})">Eliminar</button>
             </div>
             `
     });
+
+    categories.forEach((element, index) => {
+        document.getElementById(index).style.backgroundColor = element.color;
+    });
 }
 
+// esto sirve para acceder a las funciones desde los botones del html
 window.crearCategoria = crearCategoria;
 window.eliminarCategoria = eliminarCategoria;
 
+// hacemos que se carguen las categorias solo luego de que se haya cargado el html para evitar problemas
 document.addEventListener("DOMContentLoaded", cargarCategorias);

@@ -126,6 +126,7 @@ main h1 {
 }
 
 .boton{
+    margin-top: 10px;
     background-color: #025A6AFF;
     color: white;
     border-radius: 5px;
@@ -149,8 +150,17 @@ main h1 {
     overflow-y: scroll;
 }
 
+.categoria-box .nombre{
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .eliminar{
     background-color: #DF319CFF;
+}
+
+.eliminar:hover{
+    background-color: #c02f5d;
 }
 
 /* Aquesta part m'ha ajudat grok a fer-ho (la dels radio buttons)*/
