@@ -120,7 +120,8 @@ function generarGrafico() {
         graficoChartJS = new Chart(canvas.getContext("2d"), config);
     }
 
-    function cargarArchivoJSON(nombreArchivo) {
+    function cargarArchivoJSON() {
+        let nombreArchivo = document.getElementById("archivoACargar").value;
         fetch('dades/' + nombreArchivo)
             .then(response => response.json())
             .then(tareas => {
