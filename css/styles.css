@@ -226,6 +226,7 @@ label, input[type="radio"] {
     background-color: #e74c3c;
 }
 
+<<<<<<< Updated upstream
 .tarea-box{
     background-color: rgb(191, 159, 209);
     padding: 30px;
@@ -254,6 +255,9 @@ label, input[type="radio"] {
     background-color: antiquewhite;
 }
 
+=======
+/* Li he demanat a grok quin tamany de pantalla i quina tècnica es pot aplicar per fer-ho responive i vaig modificar el que em va donar*/
+>>>>>>> Stashed changes
 @media (max-width: 768px) {
     nav {
         transform: translateX(-300px);
@@ -264,6 +268,7 @@ label, input[type="radio"] {
         margin-top: 30px;
     }
 
+    /*Part d'aquest botó l'ha fet grok (no tot perque era molt fei)*/
     .toggle-btn {
         display: block;
         position: fixed;
