@@ -120,7 +120,11 @@ function generarGrafico() {
         graficoChartJS = new Chart(canvas.getContext("2d"), config);
     }
 
-    // he demanat ajuda a grok amb aixo perque hi havia un loop infinit i no el trobava
+    // he demanat ajuda a grok i chatgpt (que no ho ha fet bé només ho ha enpitjorat) amb aixo perque hi havia un loop infinit i no el trobava, el codi
+    // l'havia fet jo, grok només ha arreglat el loop infinit i ha agregat un nombre maxim d'intents
+    // per a que no es donas el loop infinit mai mes
+    // el loop pasava per un probelma amb com jo estava carregant el local storage i m'ha explicat
+    // perquè estava malament i ho he arreglat
     function cargarArchivoJSON() {
         let nombreArchivo = document.getElementById("archivoACargar").value;
         
