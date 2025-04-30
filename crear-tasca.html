@@ -24,8 +24,6 @@
         <img src="https://i6.glitter-graphics.org/pub/1713/1713336rtl2sq8q50.gif">
     </nav>
 
-    <div class="placeholder-div"></div>
-
     <main>
         <h1>Crear Nueva Tarea</h1>
         <div class="crear-tarea box">
@@ -45,6 +43,7 @@
                 <label for="categoria">Categoria:</label>
                 <select id="categoria" name="categoria">
                     <!-- hay q poner las categorias aqui !!! !! !!1!!-->
+                     <!-- ya estan puestas hace rato-->
                     <option value="placeholder" selected disabled>Categoria</option>
                 </select>
             </div>
@@ -59,6 +58,15 @@
             <button class="boton" onclick="crearTarea()">Crear Tarea</button>
         </div>
         <div class="box" id="tareasCaja">
+            <h2>Tareas</h2>
+            <h2>Pendientes</h2>
+            <div id="pendiente">
+                
+            </div>
+            <h2>Completadas</h2>
+            <div id="completada">
+                
+            </div>
         </div>
     </main>
     <script src="js/crear-tarea.js" type="module"></script>

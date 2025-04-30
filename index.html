@@ -7,8 +7,9 @@
     <meta name="description" content="Web de gestor de tareas">
     <meta name="author" content="Adrià Bonnin Catalán">
     <title>Gestor de Actividades</title>
-        <link rel="icon" href="./resources/favicon.ico">
+    <link rel="icon" href="./resources/favicon.ico">
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -24,11 +25,21 @@
         <img src="https://i6.glitter-graphics.org/pub/1713/1713336rtl2sq8q50.gif">
     </nav>
 
-    <div class="placeholder-div"></div>
-
     <main>
         <h1>Lista de Tareas</h1>
+        <div class = "box" id="chartjsCaja">
+            <canvas id="chartjsGrafico"></canvas>
+        </div>
         <div class="box" id="tareasCaja">
+            <h2>Tareas</h2>
+            <h2>Pendientes</h2>
+            <div id="pendiente">
+                
+            </div>
+            <h2>Completadas</h2>
+            <div id="completada">
+                
+            </div>
         </div>
     </main>
     <script src="js/index.js" type="module"></script>

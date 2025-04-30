@@ -79,12 +79,39 @@ function crearTarea() {
 }
 
 function cargarTareas() {
-    document.getElementById("tareasCaja").innerHTML = `<h2>Tareas</h2>`;
+    const prioridadesMapa = {
+        'alta': 1,
+        'media': 2,
+        'baja': 3
+    };
+    
+    //aquest sort li he demanat a grok perquè no el sabia fer doble (el primer sort amb el mapa
+    //de prioritats si l'he fet jo, la IA ha afegit el de abaix)
+    tasques.sort((a, b) => {
 
+        const prioridadA = prioridadesMapa[a.prioritat]; 
+        const prioridadB = prioridadesMapa[b.prioritat];
+        if (prioridadA !== prioridadB) {
+            return prioridadA - prioridadB;
+        }
+
+        const dateA = a.data ? a.data.split('-').reverse().join('') : '99999999';
+        const dateB = b.data ? b.data.split('-').reverse().join('') : '99999999';
+        return dateA.localeCompare(dateB);
+    });
+    document.getElementById("pendiente").innerHTML = "";
+    document.getElementById("completada").innerHTML = "";
+
+    // estic orgullos d'aquest codi de pendientes i completadas :D
     tasques.forEach((element) => {
         let realizadaCaja = element.realitzada ? "<div class='realizada-box verde'></div>" : "<div class='realizada-box roja'></div>";
+        let estado = "pendiente";
 
-        document.getElementById("tareasCaja").innerHTML +=
+        if (element.realitzada){
+            estado = "completada";
+        }
+
+        document.getElementById(estado).innerHTML +=
             `
             <div class="tarea-box" id="${element.id}" style="background-color: ${element.categoria.color};">
                 <div class="separation">
@@ -112,15 +139,11 @@ function cargarTareas() {
     });
 }
 
-
-
 function eliminarTarea(id) {
-    const index = tasques.findIndex(tarea => tarea.id === id);
-    if (index !== -1) {
-        tasques.splice(index, 1); // Elimina la tarea del array sin reasignar
-        localStorage.setItem("tareas", JSON.stringify(tasques)); // Actualiza localStorage
-        cargarTareas(); // Recarga visual
-    }
+    const index = tasques.findIndex(tarea => tarea.id == id);
+        tasques.splice(index, 1);
+        localStorage.setItem("tareas", JSON.stringify(tasques));
+        cargarTareas();
 }
 
 function marcarRealizada(id) {
@@ -128,8 +151,8 @@ function marcarRealizada(id) {
     if (tarea) {
         tarea.realitzada = !tarea.realitzada;
         localStorage.setItem("tareas", JSON.stringify(tasques));
-        cargarTareas();
     }
+    cargarTareas();
 }
 
 

@@ -25,12 +25,12 @@ nav {
     display: flex;
     flex-direction: column;
     color: white;
-    font-size: 20px;
+    font-size: 2vh;
     background-color: #025A6AFF;
-    width: 300px;
+    width: 20vw;
     height: 100%;
     position: fixed;
-    padding: 20px;
+    padding: 2vh;
     transition: transform 0.3s ease;
 }
 
@@ -41,7 +41,7 @@ nav p {
 
 nav ul {
     list-style-type: none;
-    margin-top: 30px;
+    margin-top: 3vh;
 }
 
 nav ul li {
@@ -53,9 +53,9 @@ nav ul li a {
     text-decoration: none;
     color: white;
     flex-grow: 1;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 2vh;
 }
 
 nav ul li:hover {
@@ -64,16 +64,13 @@ nav ul li:hover {
 
 nav img {
     margin-top: auto;
-    margin-bottom: 10px;
+    margin-bottom: 1vh;
     align-self: center;
     width: 95%;
 }
 
-.placeholder-div{
-    width: 300px;
-}
-
 main {
+    margin-left: 27vh;
     flex-grow: 2;
     display: flex;
     flex-direction: column;
@@ -234,6 +231,9 @@ label, input[type="radio"] {
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    width: fit-content;
+    margin: 20px;
+    flex-grow: 2;
 }
 
 .tarea-box *{
@@ -279,6 +279,15 @@ label, input[type="radio"] {
     border: 2px black solid;
 }
 
+#pendiente, #completada{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
 .roja {
     background-color: rgb(255, 0, 0);
 }
@@ -291,6 +300,7 @@ label, input[type="radio"] {
 /* Li he demanat a grok quin tamany de pantalla i quina tècnica es pot aplicar per fer-ho responive i vaig modificar el que em va donar*/
 @media (max-width: 768px) {
     nav {
+        
         transform: translateX(-300px);
         position: fixed;
     }
@@ -322,8 +332,7 @@ label, input[type="radio"] {
     #toggle:checked~nav {
         transform: translateX(0);
     }
-
-    .placeholder-div{
-        display: none;
+    main {
+        margin-left: 0;
     }
 }
