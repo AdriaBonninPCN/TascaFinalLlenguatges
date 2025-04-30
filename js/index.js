@@ -120,16 +120,17 @@ function generarGrafico() {
         graficoChartJS = new Chart(canvas.getContext("2d"), config);
     }
 
+    // he demanat ajuda a grok amb aixo perque hi havia un loop infinit i no el trobava
     function cargarArchivoJSON() {
         let nombreArchivo = document.getElementById("archivoACargar").value;
         
-        // Get the list of loaded files from localStorage, or initialize an empty array
+
         let loadedFiles = JSON.parse(localStorage.getItem("loadedFiles")) || [];
         
-        // Check if the file has already been loaded
+
         if (loadedFiles.includes(nombreArchivo)) {
             console.log(`El archivo ${nombreArchivo} ya ha sido cargado.`);
-            return; // Skip loading the file
+            return;
         }
     
         fetch('dades/' + nombreArchivo)
@@ -154,11 +155,11 @@ function generarGrafico() {
                     tasques.push(tarea);
                 });
     
-                // Add the file name to the list of loaded files
+
                 loadedFiles.push(nombreArchivo);
                 localStorage.setItem("loadedFiles", JSON.stringify(loadedFiles));
     
-                // Update tasks and ID in localStorage
+
                 cargarTareas();
                 localStorage.setItem("tareas", JSON.stringify(tasques));
                 localStorage.setItem("tasquesID", tasquesID);
@@ -171,7 +172,7 @@ function generarGrafico() {
     
     function generarNuevoID() {
         const nuevoID = `task-${tasquesID.toString().padStart(3, '0')}`;
-        incrementaTasquesID(); // This updates tasquesID and localStorage
+        incrementaTasquesID();
         return nuevoID;
     }
 
