@@ -173,6 +173,18 @@ function cargarCategoriasTareas() {
     });
 }
 
+function cargarArchivoJSON(nombreArchivo){
+    fetch('dades/'+nombreArchivo)
+        .then(response => response.json())
+        .then(tareas => {
+            tareas.forEach(tarea => {
+                tasques.push(tarea);
+            })
+        });
+    
+    cargarTareas();
+}
+
 window.crearTarea = crearTarea;
 window.eliminarTarea = eliminarTarea;
 window.marcarRealizada = marcarRealizada;

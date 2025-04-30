@@ -300,7 +300,6 @@ label, input[type="radio"] {
 /* Li he demanat a grok quin tamany de pantalla i quina tècnica es pot aplicar per fer-ho responive i vaig modificar el que em va donar*/
 @media (max-width: 768px) {
     nav {
-        
         transform: translateX(-300px);
         position: fixed;
     }

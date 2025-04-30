@@ -1,4 +1,5 @@
 import { cargarTareas, eliminarTarea, marcarRealizada } from './crear-tarea.js';
+import { tasques } from './database.js'
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarTareas();
@@ -118,4 +119,29 @@ function generarGrafico() {
         }
         graficoChartJS = new Chart(canvas.getContext("2d"), config);
     }
+
+    function cargarArchivoJSON(nombreArchivo) {
+        fetch('dades/' + nombreArchivo)
+            .then(response => response.json())
+            .then(tareas => {
+                tareas.forEach(tarea => {
+                    let tareaExiste = false;
+
+                    if (tasques.some(t => t.id == tarea.id)) {
+                        tareaExiste = true;
+                    }
+
+                    if (!tareaExiste) {
+                        tasques.push(tarea);
+                    }
+                });
+                cargarTareas();
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+
+
+    window.cargarArchivoJSON = cargarArchivoJSON;
 }
