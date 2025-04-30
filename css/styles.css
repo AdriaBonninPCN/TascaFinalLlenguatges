@@ -193,6 +193,11 @@ input[type="radio"].rojo {
     background-color: #e74c3c;
 }
 
+input[type="radio"].verde {
+    border-color: #4df04a;
+    background-color: #4df04a;
+}
+
 input[type="radio"]:checked {
     background-color: #ffffff;
 }
@@ -222,6 +227,10 @@ label, input[type="radio"] {
 
 .rojo{
     background-color: #e74c3c;
+}
+
+.verde{
+    background-color: #4df04a;
 }
 
 .tarea-box{

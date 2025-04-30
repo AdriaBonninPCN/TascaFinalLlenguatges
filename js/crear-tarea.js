@@ -1,6 +1,6 @@
 import { categories } from './database.js';
 import { tasques } from './database.js';
-import { tasquesID, incrementaTasquesID } from './database.js';
+import { tasquesID, incrementaTasquesID, setTasquesID} from './database.js';
 import { task } from './task.js';
 import { categoria } from './categoria.js';
 
@@ -17,6 +17,8 @@ function cargarLocal() {
 }
 
 function crearTarea() {
+
+    setTasquesID(tasques.length);
 
     let id;
 
@@ -171,18 +173,6 @@ function cargarCategoriasTareas() {
                 <option value="${element.color}">${element.nom}</option>
             `
     });
-}
-
-function cargarArchivoJSON(nombreArchivo){
-    fetch('dades/'+nombreArchivo)
-        .then(response => response.json())
-        .then(tareas => {
-            tareas.forEach(tarea => {
-                tasques.push(tarea);
-            })
-        });
-    
-    cargarTareas();
 }
 
 window.crearTarea = crearTarea;

@@ -1,5 +1,5 @@
 import { cargarTareas, eliminarTarea, marcarRealizada } from './crear-tarea.js';
-import { tasques } from './database.js'
+import { tasques, tasquesID, incrementaTasquesID, setTasquesID} from './database.js'
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarTareas();
@@ -122,27 +122,58 @@ function generarGrafico() {
 
     function cargarArchivoJSON() {
         let nombreArchivo = document.getElementById("archivoACargar").value;
+        
+        // Get the list of loaded files from localStorage, or initialize an empty array
+        let loadedFiles = JSON.parse(localStorage.getItem("loadedFiles")) || [];
+        
+        // Check if the file has already been loaded
+        if (loadedFiles.includes(nombreArchivo)) {
+            console.log(`El archivo ${nombreArchivo} ya ha sido cargado.`);
+            return; // Skip loading the file
+        }
+    
         fetch('dades/' + nombreArchivo)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Error al cargar el archivo ${nombreArchivo}`);
+                }
+                return response.json();
+            })
             .then(tareas => {
+                let maxAttempts = 1000;
                 tareas.forEach(tarea => {
-                    let tareaExiste = false;
-
-                    if (tasques.some(t => t.id == tarea.id)) {
-                        tareaExiste = true;
+                    let attempts = 0;
+                    while (tasques.some(t => t.id === tarea.id) && attempts < maxAttempts) {
+                        tarea.id = generarNuevoID();
+                        attempts++;
                     }
-
-                    if (!tareaExiste) {
-                        tasques.push(tarea);
+                    if (attempts >= maxAttempts) {
+                        console.error("No se pudo generar un ID único para la tarea", tarea);
+                        return;
                     }
+                    tasques.push(tarea);
                 });
+    
+                // Add the file name to the list of loaded files
+                loadedFiles.push(nombreArchivo);
+                localStorage.setItem("loadedFiles", JSON.stringify(loadedFiles));
+    
+                // Update tasks and ID in localStorage
                 cargarTareas();
+                localStorage.setItem("tareas", JSON.stringify(tasques));
+                localStorage.setItem("tasquesID", tasquesID);
+                generarGrafico();
             })
             .catch(error => {
-                console.error(error);
+                console.error("Error al cargar el archivo:", error);
             });
     }
-
+    
+    function generarNuevoID() {
+        const nuevoID = `task-${tasquesID.toString().padStart(3, '0')}`;
+        incrementaTasquesID(); // This updates tasquesID and localStorage
+        return nuevoID;
+    }
 
     window.cargarArchivoJSON = cargarArchivoJSON;
 }
