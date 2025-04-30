@@ -9,3 +9,5 @@ class task{
         this.realitzada = realitzada;
     }
 }
+
+export {task};

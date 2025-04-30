@@ -6,8 +6,8 @@ if (categoriesLocal) {
     JSON.parse(categoriesLocal).forEach(cate => {
         categories.push(new categoria(cate.nom, cate.color))
     });
-    console.log("categories carregades")
-    console.log(categories)
+    console.log("categories carregades");
+    console.log(categories);
 }
 
 function crearCategoria() {
@@ -22,7 +22,7 @@ function crearCategoria() {
             categoriaDuplicada = true;
             console.log("categoria duplicada")
         }
-    })
+    });
 
     if (!categoriaDuplicada) {
         if ((nom != null && nom != "") && (color != null && color != "")) {

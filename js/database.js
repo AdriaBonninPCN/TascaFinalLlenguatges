@@ -1,4 +1,9 @@
 let tasques = [];
 let categories = [];
+let tasquesID = 0;
 
-export { tasques, categories };
+function incrementaTasquesID() {
+    tasquesID++;
+  }
+
+export { tasques, categories, tasquesID, incrementaTasquesID };

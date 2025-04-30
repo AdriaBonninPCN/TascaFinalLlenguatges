@@ -226,10 +226,8 @@ label, input[type="radio"] {
     background-color: #e74c3c;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 .tarea-box{
-    background-color: rgb(191, 159, 209);
+    border: 3px solid black;
     padding: 30px;
     margin-top: 20px;
     border-radius: 15px;
@@ -253,15 +251,12 @@ label, input[type="radio"] {
 }
 
 .tarea-box .descripcion{
-    background-color: antiquewhite;
+    width: 100%;
+    border: 2px solid black;
 }
 
-=======
 /* Li he demanat a grok quin tamany de pantalla i quina tècnica es pot aplicar per fer-ho responive i vaig modificar el que em va donar*/
->>>>>>> Stashed changes
-=======
-/* Li he demanat a grok quin tamany de pantalla i quina tècnica es pot aplicar per fer-ho responive i vaig modificar el que em va donar*/
->>>>>>> Stashed changes
+
 @media (max-width: 768px) {
     nav {
         transform: translateX(-300px);
